@@ -20,23 +20,23 @@ const Navigationbar = (props) => {
   
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#DA4040"}} dark expand="md">
+      <Navbar className="navbar-wrapper" dark expand="md">
         <Container>
           <NavbarBrand href="/">Stematel25</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="m-auto" navbar>
               <NavItem>
-                <NavLink tag={RRNavLink} exact to="/major" activeClassName="active">Jurusan</NavLink>
+                <NavLink tag={RRNavLink} exact to="/major">Jurusan</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={RRNavLink} exact to="/impression" activeClassName="active">Kesan Pesan</NavLink>
+                <NavLink tag={RRNavLink} exact to="/impression">Kesan Pesan</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={RRNavLink} exact to="/teacher" activeClassName="active">Guru</NavLink>
+                <NavLink tag={RRNavLink} exact to="/teacher">Guru</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={RRNavLink} exact to="/video" activeClassName="active">Video</NavLink>
+                <NavLink tag={RRNavLink} exact to="/video">Video</NavLink>
               </NavItem>
             </Nav>
             <NavbarText>Login</NavbarText>
