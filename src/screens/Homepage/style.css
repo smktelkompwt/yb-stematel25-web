@@ -1,3 +1,288 @@
 .div{
     background-color: red;
 }
+
+.title-jurusan{
+    margin: 100px 0;
+}
+
+.dot{
+    height: 12px;
+    width: 12px;
+    border-radius: 2000px;
+    background: white;
+}
+
+.funFact-wrapper ul{
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.funFact-wrapper{
+    position: relative;
+    height: 400px;
+    border: 5px solid #FFFFFF;
+    border-radius: 4px;
+    padding: 30px;
+    background: #1D1F23;
+}
+
+.tja,.rpl,.tkj{
+    margin-bottom: 100px;
+}
+
+.tja .funFact-wrapper, .tkj .funFact-wrapper{
+    margin-top: -235px;
+}
+
+.tja .red-dots, .tkj .blue-dots{
+    z-index: -1;
+    top: -60px;
+    right: -60px;
+    position: absolute;
+}
+
+.tja .funFact-wrapper h2{
+    color: #FB5D5D;
+}
+
+.rpl .funFact-wrapper h2{
+    color: #5AD48B;
+}
+
+.tkj .funFact-wrapper h2{
+    color: #5A7DD4;
+}
+
+.rpl .funFact-wrapper{
+    margin-top: -235px;
+}
+
+.rpl .green-dots{
+    z-index: -1;
+    top: -60px;
+    left: -60px;
+    position: absolute;
+}
+
+.funFact-wrapper ul li{
+    margin-bottom: 20px;
+    color: white;
+}
+
+.red-dots{
+}
+
+/* SISWA */
+.siswa{
+    margin-bottom: 203px;
+}
+
+.siswa h1{
+    margin: 50px 0 80px 0 ;
+}
+
+.siswa .caption{
+    background-color: #1D1F23;
+}
+
+.caption-wrapper{
+    background: #1D1F23;
+}
+
+.caption-wrapper img{
+    height: 100%;
+}
+
+.caption-wrapper p{
+    font-size: 20px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.caption-wrapper h2{
+    color: white;
+}
+
+.caption-wrapper .kelas{
+    font-size: 16px;
+    color: #DDDDDD;
+}
+
+.caption-wrapper .tulisan{
+    padding: 70px 70px 25px 25px !important;
+}
+/* MEDIA Q */
+
+@media screen and (max-width: 1199px) {
+   .siswa .tulisan{
+       overflow: scroll;
+       height: 400px;
+       padding: 35px !important;
+   }
+
+   .caption-wrapper img{
+       height: 400px;
+   }
+}
+
+@media screen and (max-width: 991px) {
+    .funFact-wrapper{
+        height: 300px;
+        /* width: 430px; */
+        overflow: scroll;
+    }
+
+    .tja .funFact-wrapper, .tkj .funFact-wrapper{
+        margin-top: -170px;
+    }
+
+    .tja .red-dots, .tkj .blue-dots{
+        z-index: -1;
+        top: 0;
+        right: 0;
+        position: absolute;
+    }
+
+    .rpl .funFact-wrapper{
+        margin-top: -170px;
+    }
+
+     .siswa .tulisan{
+       overflow: scroll;
+       height: 300px;
+       padding: 35px !important;
+   }
+
+   .caption-wrapper img{
+       height: 300px;
+   }
+
+   .caption-wrapper p{
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+
+    .caption-wrapper p{
+        margin-bottom: 28px;
+    }
+
+    .caption-wrapper h2{
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
+    .caption-wrapper .kelas{
+        font-size: 13px;
+    }
+   
+}
+
+@media screen and (max-width: 767px) {
+    .rpl .funFact-wrapper{
+        margin-top: -170px;
+    }
+
+     .siswa .tulisan{
+       overflow: scroll;
+       height: 200px;
+       padding: 25px 15px 25px 5px !important;
+   }
+
+   .caption-wrapper img{
+       height: 200px;
+   }
+
+   .caption-wrapper p{
+        font-size: 13px;
+        color: white;
+        margin-bottom: 40px;
+    }
+
+
+    .caption-wrapper p{
+        margin-bottom: 24px;
+    }
+
+    .caption-wrapper h2{
+        font-size: 23px;
+        margin-bottom: 5px;
+    }
+
+    .caption-wrapper .kelas{
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width: 522px) {    
+    .caption-wrapper{
+        border: solid 3px #fff;
+        /* border-style:  */
+        background: #1D1F23;
+    }
+
+    .rpl .funFact-wrapper{
+        margin-top: -100px;
+        height: 200px;
+    }
+
+    .tja .funFact-wrapper, .tkj .funFact-wrapper{
+        margin-top: -100px;
+        height: 200px;
+    }
+    
+}
+
+@media screen and (max-width: 411px) {
+    .caption-wrapper p{
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
+    .caption-wrapper h2{
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .caption-wrapper .kelas{
+        font-size: 10px;
+    }
+
+    .caption-wrapper img{
+        height: 171px;
+    }
+
+    .siswa .tulisan{
+        height: 171px;
+    }
+
+    .caption-wrapper .tulisan{
+        padding: 15px 15px 10px 15px !important;
+    }
+
+    .caption-wrapper{
+        border: solid 3px #fff;
+        /* border-style:  */
+        background: #1D1F23;
+    }
+
+    .rpl .funFact-wrapper{
+        margin-top: -100px;
+        height: 200px;
+    }
+
+    .tja .funFact-wrapper, .tkj .funFact-wrapper{
+        margin-top: -100px;
+        height: 200px;
+    }
+
+    .title-jurusan{
+        margin: 50px 0;
+    }
+
+    .siswa h1{
+        margin: 30px 0 60px 0 ;
+    }
+    
+}

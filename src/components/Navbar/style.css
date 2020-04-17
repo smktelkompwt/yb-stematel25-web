@@ -2,3 +2,107 @@
     background-color: #DA4040;
     height: 80px;
 }
+
+nav .navbar-brand{
+    color: #FFFFFF;
+}
+
+nav button{
+    background: white !important;
+}
+
+nav button span{
+    /* background-color: #DA4040 !important; */
+}
+
+nav{
+    height: 120px;
+    background: #DA4040;
+}
+
+nav .nav-link{
+    color: #FFA4A4 !important;
+}
+
+nav .nav-item .nav-link:hover{
+    color: white !important;
+}
+
+nav .nav-item:hover::after{
+    transition: .3s;
+    content: '';
+    display: block;
+    background: #fff;
+    margin: auto;
+    width: 5px;
+    height: 5px;
+    border-radius: 2000px;
+    margin-bottom: -7px;
+    
+}
+
+nav .nav-item{
+    margin: 0px 30px 0px 30px;
+}
+
+nav .btn-login{
+    padding: 10px 30px;
+    background: white;
+    color: #AA2B2B !important;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 991px) {    
+    .video{
+        z-index: -99;
+    }
+    .navbar-nav{
+    z-index: 99;
+     background: white;   
+    }
+
+    .navbar-toggler{
+        height: 40px;
+    }
+
+    .navbar-collapse{
+        border-style: ridge;
+        border-color: #DA4040;
+        border-width: 2px;
+    }
+
+    nav .nav-item:hover::after{
+        content: '';
+        display: block;
+    }
+
+    nav .nav-item{
+        margin: 0;
+    }
+
+    nav .nav-item a{
+        padding-left: 20px;
+    }
+
+    nav .nav-link{
+        padding-left: 20px !important;
+    }
+
+
+    nav .nav-item .nav-link:hover{
+        background: #DA4040;
+        color: #fff !important;
+    }
+
+    nav .btn-login{
+        border-radius: 0 !important;
+    }
+
+    nav .btn-login:hover{
+        background: #DA4040;
+        color: #fff !important;
+        /* padding: 0; */
+    }
+    
+    
+}

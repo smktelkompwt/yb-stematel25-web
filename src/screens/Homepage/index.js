@@ -1,2 +1,2 @@
-import Component from './component.js';
+import Component from './component.jsx';
 export default Component;

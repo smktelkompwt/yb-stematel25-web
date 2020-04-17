@@ -10,7 +10,6 @@ function Layout() {
   return (
     <div>
       <Navbar />
-      <Container>
         <Suspense fallback={<div>loading...</div>}>
           <Switch>
             {routes.map((route, idx) => {
@@ -28,7 +27,6 @@ function Layout() {
             <Redirect from="/" to="/homepage" />
           </Switch>
         </Suspense>
-      </Container>
       <Footer />
     </div>
   );
