@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './style.css';
 import IMAGES from '../../config/images';
 import { NavLink as RRNavLink } from 'react-router-dom';
+import {
+  NavLink
+} from 'reactstrap';
 
 const Navigationbar = (props) => {
 
@@ -9,28 +12,13 @@ const Navigationbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
   
   return (
-      <nav class="navbar navbar-expand-lg">
-        <div className="container">
-          <a class="navbar-brand" href="#">Stematel25</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <img src={IMAGES.more} alt=""/>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Jurusan <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Kesan Pesan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Guru</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Video</a>
-              </li>
-            </ul>
-            <a className="nav-link btn-login" href="">Login</a>
+      <nav>
+        <div className="content d-flex">
+          <div className="jurusan-title-wrapper">
+            <h4>RPL25</h4>
+          </div>
+          <div className="toggle-nav-wrapper">
+            <img src={IMAGES.toggleNav} alt=""/>
           </div>
         </div>
       </nav>
