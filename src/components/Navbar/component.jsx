@@ -12,16 +12,50 @@ const Navigationbar = (props) => {
   const toggle = () => setIsOpen(!isOpen);
   
   return (
-      <nav>
-        <div className="content d-flex">
-          <div className="jurusan-title-wrapper">
-            <h4>RPL25</h4>
+    <section>
+        <nav>
+          <div className="content d-flex">
+            <div className="jurusan-title-wrapper">
+              <h4>RPL25</h4>
+            </div>
+            <div className="toggle-nav-wrapper">
+              <img src={IMAGES.toggleNav} alt=""/>
+            </div>
           </div>
-          <div className="toggle-nav-wrapper">
-            <img src={IMAGES.toggleNav} alt=""/>
+        </nav>
+          <div className="nav-2" >
+            <div className="container">
+                <div className="row">
+                  <div className="col">
+                    <img className="close-icon" src={IMAGES.close} alt=""/>
+                  </div>
+                </div>
+              <div className="row">
+                <div className="col">
+                    <a href="">
+                      <img className="mb-3" src={IMAGES.home} alt=""/>
+                    </a>
+                    <a href="#">
+                      <h1>Pesan dan Kesan</h1>
+                    </a>
+                    <a href="#">
+                      <h1>Daftar Guru</h1>
+                    </a>
+                    <a href="#">
+                      <h1>Daftar Siswa</h1>
+                    </a>
+                    <a href="#">
+                      <h1>Tentang Kami</h1>
+                    </a>
+                    <a href="#">
+                      <h1>Login</h1>
+                    </a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </nav>
+
+    </section>
   );
 }
 

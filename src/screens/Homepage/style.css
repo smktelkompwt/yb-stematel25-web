@@ -92,7 +92,26 @@
 }
 
 /* EKSPETASI */
-
 .ekspetasi{
+    position: relative;
+    overflow: hidden;
+}
+
+.ekspetasi h1{
+    font-size: 64px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.ekspetasi .content{
+    padding-bottom: 45px;
+    padding-top: 50px;
+    width: 1504px;
     background: #000000;
+}
+
+.ekspetasi .foto-ekspetasi{
+    left: -200px;
+    position: relative;
 }

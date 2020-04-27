@@ -67,15 +67,13 @@ class Homepage extends Component{
         {/* EKSPETASI */}
           <section className="ekspetasi">
             <div className="container">
-              <div className="row">
-                <div className="col">
-                  <h1 className="realita-title mb-5">REALITA</h1>
+              <div className="row justify-content-end content">
+                <div className="col-lg-4">
+                    <h1 className="realita-title mb-0">REALITA</h1>
                 </div>
               </div>
               <div className="row">
-                <div className="col">
-
-                </div>
+                <img className="foto-ekspetasi" src={IMAGES.fotoEkspetasi} alt=""/>
               </div>
             </div>
           </section>

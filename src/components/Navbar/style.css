@@ -25,3 +25,21 @@ nav{
     position: fixed;
     font-family: 'Montserrat';
 }
+
+.nav-2{
+    padding-bottom: 102px;
+    padding-top: 192px;
+    background: black;
+    width: 100%;
+}
+
+.nav-2 .close-icon{
+    position: absolute;
+    left: 0;
+    top: -120px;
+}
+
+.nav-2 h1{
+    font-size: 52px;
+    color: white;
+}
