@@ -5,8 +5,8 @@ import PhotoList from '../../components/PhotoList'
 
 const Teacher = () => {
   return (
-    <div className="teacher-wrapper">
-      <h1 className="teacher-title">Guru Guru Kita<br/>Tercintah</h1>
+    <div className="teacher">
+      <h1 className="teacher-title">GURU GURU KITA<br/>TERCINTAH</h1>
       <div className="teacher-photo-list">
         <PhotoList />
         <PhotoList />

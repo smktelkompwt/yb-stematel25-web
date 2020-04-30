@@ -1,4 +1,4 @@
-.teacher-wrapper {
+.teacher {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -15,7 +15,7 @@
 }
 
 .teacher-photo-list{
-    width: 75%;
+    width: 78%;
     display: flex;
     flex-flow: wrap;
 }
