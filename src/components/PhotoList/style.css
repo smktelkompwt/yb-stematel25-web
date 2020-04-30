@@ -2,7 +2,7 @@
     position: relative;
     flex: 0 0 33.3333%;
     text-align: center;
-    margin-bottom: 4.5vw;
+    margin-bottom: 2.8vw;
 }
 
 .photoList-wrapper:hover .photoList-detail {
@@ -16,9 +16,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    width: 20vw;
+    width: 23vw;
     min-width: 200px;
-    height: 20vw;
+    height: 23vw;
     min-height: 200px;
     opacity: 0;
     transition: .5s ease;
@@ -47,9 +47,9 @@
 }
 
 .photoList-image{
-    width: 20vw;
+    width: 23vw;
     min-width: 200px;
-    height: 20vw;
+    height: 23vw;
     min-height: 200px;
     object-fit: cover;
 }
