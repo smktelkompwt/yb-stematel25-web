@@ -9,15 +9,13 @@
 }
 
 .toggle-nav-wrapper{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: white;
+    border: none;
     height: 70px;
     width: 70px;
-}
-
-.toggle-nav-wrapper img{
-    margin-top: 27px;
-    line-height: 70px;
 }
 
 nav{
@@ -28,7 +26,7 @@ nav{
 
 .nav-2{
     padding-bottom: 102px;
-    padding-top: 192px;
+    padding-top: 100px;
     background: black;
     width: 100%;
 }
@@ -39,7 +37,15 @@ nav{
     top: -120px;
 }
 
-.nav-2 h1{
+.navbar-wrapper{
+    list-style: none;
+}
+
+.navbar-link:hover{
+    color: #FB5D5D;
+}
+
+.navbar-link{
     font-size: 52px;
     color: white;
 }
