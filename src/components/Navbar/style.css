@@ -21,10 +21,11 @@
 nav{
     z-index: 999;
     position: fixed;
-    font-family: 'Montserrat';
 }
 
 .nav-2{
+    position: fixed;
+    z-index: 998;
     padding-bottom: 102px;
     padding-top: 100px;
     background: black;
