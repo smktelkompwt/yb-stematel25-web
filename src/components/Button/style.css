@@ -11,9 +11,11 @@
     border: none;
     padding: 10px;
     background-color: #FF5151;
+    transition: .3s;
 }
 
 .btn-wrapper>button:hover{
+    transition: .3s;
     top: -4px;
     left: -4px;
     color: white
