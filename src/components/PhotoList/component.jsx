@@ -11,7 +11,7 @@ const PhotoList = () => {
                     <p className="photoList-detail-desc">Apapun yang terjadi kita semua always the best</p>
                 </div>
             </div>
-            <img className="photoList-image" src={require("../../assets/img/foto-siswa.png")} />
+            <img className="photoList-image" src={require("../../assets/img/foto-siswa.png")} alt=""/>
         </div>
     )
 }
