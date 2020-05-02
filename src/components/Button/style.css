@@ -1,0 +1,22 @@
+.btn-wrapper{
+    position: relative;
+}
+
+.btn-wrapper>button{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    background-color: #FF5151;
+    transition: .3s;
+}
+
+.btn-wrapper>button:hover{
+    transition: .3s;
+    top: -4px;
+    left: -4px;
+    color: white
+}

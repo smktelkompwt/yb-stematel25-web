@@ -2,6 +2,7 @@
     background: black;
     padding: 37px;
     color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .jurusan-title-wrapper h4{
@@ -9,26 +10,26 @@
 }
 
 .toggle-nav-wrapper{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: white;
+    border: none;
     height: 70px;
     width: 70px;
-}
-
-.toggle-nav-wrapper img{
-    margin-top: 27px;
-    line-height: 70px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 nav{
     z-index: 999;
     position: fixed;
-    font-family: 'Montserrat';
 }
 
 .nav-2{
+    position: fixed;
+    z-index: 998;
     padding-bottom: 102px;
-    padding-top: 192px;
+    padding-top: 100px;
     background: black;
     width: 100%;
 }
@@ -39,7 +40,15 @@ nav{
     top: -120px;
 }
 
-.nav-2 h1{
+.navbar-wrapper{
+    list-style: none;
+}
+
+.navbar-link:hover{
+    color: #FB5D5D;
+}
+
+.navbar-link{
     font-size: 52px;
     color: white;
 }

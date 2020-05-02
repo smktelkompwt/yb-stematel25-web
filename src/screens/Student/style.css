@@ -41,6 +41,7 @@
 }
 
 .student-tab-link {
+    transition: .3s;
     position: absolute;
     top: -10px;
     left: -10px;
@@ -51,6 +52,12 @@
     align-items: center;
     width: 15vw;
     height: 2.8vw;
+}
+
+.student-tab-link:hover{
+    transition: .3s;
+    top: -4px;
+    left: -4px;
 }
 
 .student-tab-active {
