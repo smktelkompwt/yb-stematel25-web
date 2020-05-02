@@ -1,0 +1,20 @@
+.btn-wrapper{
+    position: relative;
+}
+
+.btn-wrapper>button{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    background-color: #FF5151;
+}
+
+.btn-wrapper>button:hover{
+    top: -4px;
+    left: -4px;
+    color: white
+}
