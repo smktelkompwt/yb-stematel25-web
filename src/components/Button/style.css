@@ -2,19 +2,24 @@
     position: relative;
 }
 
-.btn-wrapper>button{
+.btn-wrapper>.linkto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     top: -10px;
     left: -10px;
     font-weight: bold;
+    color: black;
+    text-decoration: none;
     border: none;
     padding: 10px;
     background-color: #FF5151;
     transition: .3s;
 }
 
-.btn-wrapper>button:hover{
+.btn-wrapper>.linkto:hover{
     transition: .3s;
     top: -4px;
     left: -4px;
