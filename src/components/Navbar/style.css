@@ -2,6 +2,7 @@
     background: black;
     padding: 37px;
     color: white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .jurusan-title-wrapper h4{
@@ -16,6 +17,7 @@
     border: none;
     height: 70px;
     width: 70px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 nav{
