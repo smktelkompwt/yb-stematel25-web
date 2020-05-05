@@ -46,16 +46,19 @@ const Homepage = () => {
         <section className="ekspetasi">
           <div>
             <div className="container">
-              <p className="ekspetasi-title">EKSPETASI</p>
+                <p className="ekspetasi-title">EKSPETASI</p>
             </div>
+            <div className="container">
               <div className="ekspetasi-code">
                 <div className="container">
                   <h1>99% CODE</h1>
                   <h1>1% COPY PASTE</h1>
                 </div>
               </div>
+            </div>
+              
             <div className="container">
-              <h1>DAN LAMPUI<br/>BATASANMU</h1>
+              <p className="ekspetasi-title">DAN LAMPAUI <br/> BATASANMU</p>
             </div>
           </div>
         </section>
@@ -95,6 +98,7 @@ const Homepage = () => {
                 
               </div>
               <Button text="INGET SEKARANG DONG" bgColor="white" width="240px" path="/teacher"/>
+              <br/>br 
             </div>
           </div>
         </section>
@@ -108,7 +112,7 @@ const Homepage = () => {
           <div>
             
           </div>
-          <Button text="KEPOIN YUK GES" width="240px" path="/student"/>
+          {/* <Button text="KEPOIN YUK GES" width="240px" path="/student"/> */}
         </section>
       {/* AKHIR TEMEN */}
 
@@ -132,7 +136,7 @@ const Homepage = () => {
 
 const realita = (title, value) => {
   return (
-    <div className="col-lg-3">
+    <div className="col-lg-3 col-md-3">
       <div className="content">
         <h3>{value}</h3>
         <p className="m-0">{title}</p>
