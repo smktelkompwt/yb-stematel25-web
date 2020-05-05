@@ -1,5 +1,11 @@
+.homepage-title>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .jumbotronz {
-    font-family: 'Montserrat';
     background-image: url(../../assets//img/jumbotron-img.png);
     /* margin-top: -120px; */
     background-position: center center;
@@ -13,7 +19,6 @@
 .jumbotronz h1{
     font-size: 64px;
     font-weight: 900;
-    font-family: 'Montserrat';
     color: white;
     position: relative;
     top: -30px;
@@ -30,7 +35,6 @@
 
 .jumbotronz h2{
     font-size: 42px;
-    font-family: 'Montserrat';
     color: white;
     font-weight: 600;
 }
@@ -63,7 +67,6 @@
     background: #F3F3F3;
     padding-top: 55px;
     padding-bottom: 180px;
-    font-family: 'Montserrat';
 }
 
 .realita .content{
@@ -93,25 +96,176 @@
 
 /* EKSPETASI */
 .ekspetasi{
+    z-index: 99;
     position: relative;
+    display: flex;
+    justify-content: flex-end;
     overflow: hidden;
+    height: 120vh;
 }
 
-.ekspetasi h1{
+.ekspetasi>div{
+    padding: 50px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    width: 90vw;
+    background-color: black;
+}
+
+.ekspetasi-title{
     font-size: 64px;
     color: rgba(255, 255, 255, 0.9);
     font-weight: bold;
     letter-spacing: 0.1em;
 }
 
-.ekspetasi .content{
-    padding-bottom: 45px;
-    padding-top: 50px;
-    width: 1504px;
-    background: #000000;
+.ekspetasi h1{
+    font-size: 52;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.1em;
 }
 
-.ekspetasi .foto-ekspetasi{
-    left: -200px;
+.ekspetasi>h1{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ekspetasi-code{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 90vw;
+    height: 50vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../../assets//img/foto-jurusan.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* ULTRA */
+.ultra{
+    height: 120vh;
+    margin-top: -50px;
+    background-color: #FF5151;
+}
+
+.ultra-title-wrapper{
+    z-index: 98;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding-right: 10%;
+    background-color: #FF3333;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.15);
+}
+
+.ultra-title{
+    color: #29291E;
+    margin-top: 50px;
+    font-size: 52px;
+    font-weight: bold;
+}
+
+/* KOMENIN */
+.section-carousel{
+    margin-bottom: 70px;
+}
+
+.guru{
+    background-color: black;
+    padding: 70px 0 70px 0;
+    margin-bottom: 0px;
+}
+
+.section-carousel-title{
+    font-size: 52px;
+    text-align: right;
+    font-weight: bold;
+    color: #29291E;
+    margin: 70px 0 32px 0;
+}
+
+.guru-title {
+    color: white
+}
+
+.section-carousel>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TEMEN */
+.temen{
+    height: 100vh;
+    margin-top: -30px;
+}
+
+.temen-title-wrapper{
+    z-index: 98;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    padding-right: 10%;
+    background-color: #FF3333;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.15);
+}
+
+.temen-title{
+    color: #29291E;
+    margin-top: 50px;
+    font-size: 52px;
+    font-weight: bold;
+}
+
+/* OUTRO */
+.outro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outro-wrapper{
     position: relative;
+    width: 526px;
+    height: 456px;
+    margin-bottom: 100px;
+    background-color: black;
+}
+
+.outro-wrapper>div{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -20px;
+    left: -20px;
+    width: 526px;
+    height: 456px;
+    transition: .4s;
+    background: #FF5151;
+}
+
+.outro-wrapper>div:hover{
+    transition: .4s;
+    top: -8px;
+    left: -8px;
+}
+
+.outro-wrapper>div>p {
+    font-weight: bold;
+    font-size: 52px;
 }
