@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,900;1,600;1,700&display=swap);
+
 .homepage-title>div{
     display: flex;
     flex-direction: column;
@@ -22,6 +25,7 @@
     color: white;
     position: relative;
     top: -30px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .bg-red{
@@ -37,6 +41,7 @@
     font-size: 42px;
     color: white;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .jumbotronz h2{
@@ -72,7 +77,7 @@
 .realita .content{
     border-left: solid 20px #FF5151;
     background: white;
-    padding: 40px 0px 40px 36px;
+    padding: 40px 0px 40px 40px;
     transition: .3s;
 }
 
@@ -91,7 +96,8 @@
     font-size: 64px;
     color: rgba(41, 41, 30, 0.8);
     font-weight: bold;
-    letter-spacing: 0.1em;
+    letter-spacing: 10px;
+    
 }
 
 /* EKSPETASI */
@@ -99,9 +105,9 @@
     z-index: 99;
     position: relative;
     display: flex;
-    justify-content: flex-end;
     overflow: hidden;
-    height: 120vh;
+    height: 180vh;
+    margin-left: 18vh;
 }
 
 .ekspetasi>div{
@@ -118,7 +124,10 @@
     font-size: 64px;
     color: rgba(255, 255, 255, 0.9);
     font-weight: bold;
-    letter-spacing: 0.1em;
+    letter-spacing: 10px;
+    float: right;
+    justify-content: flex-end;
+    margin-right: 2vw;
 }
 
 .ekspetasi h1{
@@ -126,6 +135,7 @@
     color: white;
     font-weight: bold;
     letter-spacing: 0.1em;
+    margin-left: 4vw;
 }
 
 .ekspetasi>h1{
@@ -134,16 +144,17 @@
 }
 
 .ekspetasi-code{
+    margin-left: -100px !important;
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 32%;
     margin-top: -200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    width: 90vw;
-    height: 50vh;
+    width: 100%;
+    height: 80vh;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../../assets//img/foto-jurusan.png);
     background-position: center center;
     background-repeat: no-repeat;
