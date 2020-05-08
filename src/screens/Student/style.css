@@ -28,17 +28,18 @@
     flex: 1;
     justify-content: space-around;
     align-items: center;
-    width: 75%;
+    width: 90%;
     margin-bottom: 72px;
     border: none;
+    width: 75%
 }
 
 .student-tab-item {
     position: relative;
     background-color: black;
     font-weight: bold;
-    width: 15vw;
-    height: 2.8vw;
+    width: 260px;
+    min-height: 43px;
 }
 
 .student-tab-link {
@@ -51,8 +52,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vw;
-    height: 2.8vw;
+    width: 260px;
+    min-height: 43px;
+    text-align: center;
+    padding: 5px;
 }
 
 .student-tab-link:hover{
@@ -71,15 +74,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vw;
-    height: 2.8vw;
+    width: 260px;
+    min-height: 43px;
 }
 
 .student-photo {
-    width: 78%;
+    width: 90%;
 }
 
 .student-photo-list {
     display: flex;
     flex-flow: wrap;
+    width: 100%;
 }

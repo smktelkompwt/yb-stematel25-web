@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
 import classnames from 'classnames';
+import students from '../../data/siswa.json'
 import './style.css';
 
 import PhotoList from '../../components/PhotoList'
@@ -54,41 +55,41 @@ const Student = () => {
           <TabPane tabId="1">
             <p>XII RPL 1</p>
             <div className="student-photo-list">
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
+              {
+                students.filter(student => student.class === "XII RPL 1").map((rpl1, key) => (
+                  <PhotoList data={rpl1} key={key} />
+                ))
+              }
             </div>
           </TabPane>
           <TabPane tabId="2">
             <p>XII RPL 2</p>
             <div className="student-photo-list">
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
+              {
+                students.filter(student => student.class === "XII RPL 2").map((rpl1, key) => (
+                  <PhotoList data={rpl1} key={key} />
+                ))
+              }
             </div>
           </TabPane>
           <TabPane tabId="3">
             <p>XII RPL 3</p>
             <div className="student-photo-list">
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
+              {
+                students.filter(student => student.class === "XII RPL 3").map((rpl1, key) => (
+                  <PhotoList data={rpl1} key={key} />
+                ))
+              }
             </div>
           </TabPane>
           <TabPane tabId="4">
             <p>XII RPL 4</p>
             <div className="student-photo-list">
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
-              <PhotoList />
+              {
+                students.filter(student => student.class === "XII RPL 4").map((rpl1, key) => (
+                  <PhotoList data={rpl1} key={key} />
+                ))
+              }
             </div>
           </TabPane>
         </TabContent>

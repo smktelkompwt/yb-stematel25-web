@@ -7,6 +7,7 @@ const Impression = React.lazy(() => import('./screens/Impression'));
 const Teacher = React.lazy(() => import('./screens/Teacher'));
 const Video = React.lazy(() => import('./screens/Video'));
 const Student = React.lazy(() => import('./screens/Student'));
+const StudentDetail = React.lazy(() => import('./screens/StudentDetail'));
 
 const routes = [
     { path: '/', exact: true, name: 'Home', component: Layout },
@@ -16,6 +17,7 @@ const routes = [
     { path: '/teacher', exact: true, name: 'Teacher', component: Teacher },
     { path: '/video', exact: true, name: 'Video', component: Video },
     { path: '/student', exact: true, name: 'Student', component: Student },
+    { path: '/student-detail', exact: true, name: 'StudentDetail', component: StudentDetail },
 ];
 
 export default routes;
