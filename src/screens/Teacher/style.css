@@ -16,7 +16,7 @@
 }
 
 .teacher-photo-list{
-    width: 78%;
+    width: 90%;
     display: flex;
     flex-flow: wrap;
 }
