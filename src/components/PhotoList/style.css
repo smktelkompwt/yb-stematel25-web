@@ -1,6 +1,6 @@
 .photoList-wrapper{
     position: relative;
-    flex: 0 0 33.3333%;
+    flex: 1 0 25%;
     text-align: center;
     margin-bottom: 2.8vw;
 }
@@ -16,9 +16,9 @@
     bottom: 0;
     left: 0;
     right: 0;
-    width: 23vw;
+    width: 19vw;
     min-width: 200px;
-    height: 23vw;
+    height: 19vw;
     min-height: 200px;
     opacity: 0;
     transition: .5s ease;
@@ -41,15 +41,18 @@
 }
 
 .photoList-detail-title{
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.photoList-detail-desc{
+    margin-bottom: 3px;
 }
 
 .photoList-image{
-    width: 23vw;
+    width: 19vw;
     min-width: 200px;
-    height: 23vw;
+    height: 19vw;
     min-height: 200px;
     object-fit: cover;
 }
