@@ -167,6 +167,9 @@
     height: 120vh;
     margin-top: -50px;
     background-color: #FF5151;
+    width: 90%;
+    right: 0;
+    float: right;
 }
 
 .ultra-title-wrapper{

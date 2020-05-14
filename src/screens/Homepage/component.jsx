@@ -107,7 +107,7 @@ const Homepage = () => {
                 
               </div>
               <Button text="INGET SEKARANG DONG" bgColor="white" width="240px" path="/teacher"/>
-              <br/>br 
+              <br/> 
             </div>
           </div>
         </section>
