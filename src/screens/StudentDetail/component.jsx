@@ -4,13 +4,21 @@ import './style.css';
 
 const StudentDetail = (props) => {
   const data = props.location.state
-  console.log(data)
+
+  const checkPath = (path) => {
+    try {
+        return require(`../../data${path}`)
+    } catch (err) {
+        return require('../../assets/img/no-image.png')
+    }
+  };
+
   return (
     <div className="student-detail">
       <div style={{marginBottom: 20}}>
         <p className="student-detail-class">{data ? data.class : 'XII RPL'}</p>/{data ? data.name : ''}
       </div>
-      <img src={data ? require(`${data.image}`) : require('../../assets/img/no-image.png')} alt=""/>
+      <img src={data ? checkPath(data.image) : require('../../assets/img/no-image.png')} alt=""/>
       <div>
         {biodata('Nama Lengkap', data ? data.name : '')}
         {biodata('Kelas', data ? data.class : '')}

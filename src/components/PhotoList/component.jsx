@@ -4,6 +4,15 @@ import './style.css'
 
 const PhotoList = (props) => {
     const { data } = props
+
+    const checkPath = (path) => {
+        try {
+            return require(`../../data${path}`)
+        } catch (err) {
+            return require('../../assets/img/no-image.png')
+        }
+    };
+
     return(
         <Link className="photoList-wrapper" to={{
             pathname: '/student-detail',
@@ -16,7 +25,7 @@ const PhotoList = (props) => {
                     <p className="photoList-detail-desc">{data.comment ? data.comment : ''}</p>
                 </div>
             </div>
-            <img className="photoList-image" src={data.image ? data.image : require('../../assets/img/no-image.png')} alt=""/>
+            <img className="photoList-image" src={checkPath(data.image)} alt=""/>
         </Link>
     )
 }
