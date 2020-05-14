@@ -7,11 +7,43 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import firebase from 'firebase'
 
 const Navigationbar = (props) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyANeDhtG8IwdQ5pj8YN_UfSFbgywxIynwQ",
+    authDomain: "yb-stematel25.firebaseapp.com",
+    databaseURL: "https://yb-stematel25.firebaseio.com",
+    projectId: "yb-stematel25",
+    storageBucket: "yb-stematel25.appspot.com",
+    messagingSenderId: "645018167819",
+    appId: "1:645018167819:web:f01b615d26f225d224f50e",
+    measurementId: "G-7NB4GCCMT8"
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  const [user, setUser] = useState([])
+
+  const onBtnLoginClick = () => {
+    firebase.auth().signInWithPopup(provider).then((res) => {
+      setUser({user: res.user})
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
+  const onBtnLogoutClick = () =>{
+    firebase.auth().signOut().then((res) => setUser({ user : [] }))
+    .catch((err) => console.log(err))
+  }
   
   return (
     <section>
@@ -42,9 +74,16 @@ const Navigationbar = (props) => {
           <NavItem className="navbar-wrapper">
             <NavLink className="navbar-link" tag={RRNavLink} exact to="/video" onClick={toggle}>Tentang Kami</NavLink>
           </NavItem>
-          <NavItem className="navbar-wrapper">
-            <NavLink className="navbar-link" tag={RRNavLink} exact to="/" onClick={toggle}>Login</NavLink>
-          </NavItem>
+          {user.length == 0 ?
+            <NavItem className="navbar-wrapper">
+              <NavLink className="navbar-link" tag={RRNavLink} exact to="/" onClick={onBtnLoginClick}>Login</NavLink>
+            </NavItem> 
+          : 
+            <NavItem className="navbar-wrapper">
+              <NavLink className="navbar-link" tag={RRNavLink} exact to="/" onClick={onBtnLogoutClick}>Logout</NavLink>
+              <NavLink className="navbar-link" tag={RRNavLink} exact to="/">{user.user.displayName}</NavLink>
+            </NavItem>
+         }
         </div>
       </Collapse>
     </section>

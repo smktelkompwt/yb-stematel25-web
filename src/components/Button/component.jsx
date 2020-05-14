@@ -4,7 +4,7 @@ import './style.css'
 
 const Button = (props) => {
     return(
-        <div className="btn-wrapper" style={{
+        <div className="btn-wrapper wow fadeInLeft" style={{
             backgroundColor: props.bgColor ? props.bgColor : "black",
             width: props.width ? props.width : 200,
             height: props.height ? props.height : 45
