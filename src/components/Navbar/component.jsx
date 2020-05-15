@@ -10,7 +10,7 @@ import {
 import firebase from 'firebase'
 
 const Navigationbar = (props) => {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')))
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -41,13 +41,14 @@ const Navigationbar = (props) => {
 
   const onBtnLogoutClick = () =>{
     firebase.auth().signOut().then((res) => {
-      setUser({})
+      setUser(null)
       localStorage.removeItem('user')
-      window.location.reload(false)
+      // window.location.reload(false)
     })
     .catch((err) => console.log(err))
   }
 
+  console.log(user);
   
   
   return (
@@ -61,7 +62,7 @@ const Navigationbar = (props) => {
               <img src={IMAGES.toggleNav} alt=""/>
           </button>
         </div>
-        <p className="navbar-username">{JSON.parse(localStorage.getItem('user')) !== null ? JSON.parse(localStorage.getItem('user')).displayName : ''}</p>
+        <p className="navbar-username">{user !== null ? user.displayName : ''}</p>
       </nav>
       <Collapse isOpen={isOpen} navbar className="nav-2">
         <div className="container">
@@ -81,14 +82,14 @@ const Navigationbar = (props) => {
             <NavLink className="navbar-link" tag={RRNavLink} exact to="/video" onClick={toggle}>Tentang Kami</NavLink>
           </NavItem>
           {
-          JSON.parse(localStorage.getItem('user')) === null ?
+          user === null ?
             <NavItem className="navbar-wrapper">
               <NavLink className="navbar-link" tag={RRNavLink} exact to="/" onClick={onBtnLoginClick}>Login</NavLink>
             </NavItem> 
           : 
             <NavItem className="navbar-wrapper">
               <NavLink className="navbar-link" tag={RRNavLink} exact to="/" onClick={onBtnLogoutClick}>Logout</NavLink>
-              <NavLink className="navbar-link" tag={RRNavLink} exact to="/">{JSON.parse(localStorage.getItem('user')).displayName}</NavLink>
+              <NavLink className="navbar-link" tag={RRNavLink} exact to="/">{user.displayName}</NavLink>
             </NavItem>
           }
         </div>
