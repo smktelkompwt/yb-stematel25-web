@@ -28,7 +28,7 @@ const StudentDetail = (props) => {
         {biodata('Pesan', data ? data.comment : '')}
       </div>
       <div className="student-detail-call">
-        <Button text='Hubungi Diaa' width="100%"/>
+        <Button text='Hubungi Diaa' width="100%" exPath={data ? `https://instagram.com/${data.instagram}` : null}/>
       </div>
     </div>
   );
