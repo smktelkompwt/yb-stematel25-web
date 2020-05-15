@@ -66,6 +66,7 @@
     transition: .3s;
     top: -4px;
     left: -4px;
+    cursor: pointer;
 }
 
 .student-tab-active {
