@@ -13,8 +13,12 @@ const PhotoList = (props) => {
         }
     };
 
+    const storeDataStudent = (data) => {
+        localStorage.setItem('studentData', JSON.stringify(data))
+    }
+
     return(
-        <Link className="photoList-wrapper" to={{
+        <Link className="photoList-wrapper" onClick={() => storeDataStudent(data)} to={{
             pathname: '/student-detail',
             state: data
         }}>
