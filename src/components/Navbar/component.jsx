@@ -10,7 +10,7 @@ import {
 import firebase from 'firebase'
 
 const Navigationbar = (props) => {
-
+  const [user, setUser] = useState({})
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -30,24 +30,29 @@ const Navigationbar = (props) => {
   }
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  const [user, setUser] = useState([])
-
   const onBtnLoginClick = () => {
-    firebase.auth().signInWithPopup(provider).then((res) => {
-      setUser({user: res.user})
+    firebase.auth().signInWithPopup(provider).then(async (res) => {
+      localStorage.setItem('user', JSON.stringify(res.user))
+      setUser(res.user)
     }).catch((err) => {
       console.log(err)
     })
   }
 
   const onBtnLogoutClick = () =>{
-    firebase.auth().signOut().then((res) => setUser({ user : [] }))
+    firebase.auth().signOut().then((res) => {
+      setUser({})
+      localStorage.removeItem('user')
+      window.location.reload(false)
+    })
     .catch((err) => console.log(err))
   }
+
+  
   
   return (
     <section>
-      <nav>
+      <nav className="navbar-container">
         <div className="content d-flex">
           <div className="jurusan-title-wrapper">
             <h4>RPL25</h4>
@@ -56,6 +61,7 @@ const Navigationbar = (props) => {
               <img src={IMAGES.toggleNav} alt=""/>
           </button>
         </div>
+        <p className="navbar-username">{JSON.parse(localStorage.getItem('user')) !== null ? JSON.parse(localStorage.getItem('user')).displayName : ''}</p>
       </nav>
       <Collapse isOpen={isOpen} navbar className="nav-2">
         <div className="container">
@@ -74,16 +80,17 @@ const Navigationbar = (props) => {
           <NavItem className="navbar-wrapper">
             <NavLink className="navbar-link" tag={RRNavLink} exact to="/video" onClick={toggle}>Tentang Kami</NavLink>
           </NavItem>
-          {user.length == 0 ?
+          {
+          JSON.parse(localStorage.getItem('user')) === null ?
             <NavItem className="navbar-wrapper">
               <NavLink className="navbar-link" tag={RRNavLink} exact to="/" onClick={onBtnLoginClick}>Login</NavLink>
             </NavItem> 
           : 
             <NavItem className="navbar-wrapper">
               <NavLink className="navbar-link" tag={RRNavLink} exact to="/" onClick={onBtnLogoutClick}>Logout</NavLink>
-              <NavLink className="navbar-link" tag={RRNavLink} exact to="/">{user.user.displayName}</NavLink>
+              <NavLink className="navbar-link" tag={RRNavLink} exact to="/">{JSON.parse(localStorage.getItem('user')).displayName}</NavLink>
             </NavItem>
-         }
+          }
         </div>
       </Collapse>
     </section>
