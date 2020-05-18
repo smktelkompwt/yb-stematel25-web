@@ -164,53 +164,76 @@
 
 /* ULTRA */
 .ultra{
-    height: 120vh;
-    margin-top: -50px;
-    background-color: #FF5151;
-    width: 90%;
-    right: 0;
-    float: right;
+    background: #FF5151;
+    padding-bottom: 127px;
 }
 
-.ultra-title-wrapper{
-    right: 0;
-    z-index: 98;
+.ultra .title-wrapper{
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
-    padding-right: 10%;
-    background-color: #FF3333;
+    left: 0;
+    background: #FF3333;
+    width: 505px;
+    height: 430px;
     box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.15);
 }
 
-.ultra-title{
-    color: #29291E;
-    margin-top: 50px;
-    font-size: 52px;
+.ultra .title-wrapper h2{
     font-weight: bold;
+    font-size: 52px;
+    line-height: 78px;
+    margin-top: 180px;
+    margin-left: 134px;
+    letter-spacing: 0.1em;
 }
 
-.video-section {
-    margin-top: 25vh;
-    right: 0;
-    background: url(../../assets/img/video.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: absolute;
-    z-index: 97;
-    width: 100%;
-    height: 80vh;
-    cursor: pointer;
+.ultra .video{
+    margin-top: 127px;
 }
-
 
 /* KOMENIN */
+
+.arrLeftWrapper{
+    width: 64px;
+    height: 63px;
+    border-radius: 2000px;
+    background: white;
+    justify-content: center;
+    text-align: center;
+    line-height: 63px;
+}
+
+.arrRightWrapper{
+    box-shadow: 0 4px 20px #EF6C66;
+    width: 64px;
+    height: 63px;
+    border-radius: 2000px;
+    background: #FF5151;
+    justify-content: center;
+    text-align: center;
+    line-height: 63px;
+}
+
+.cardz-body{
+    background: white;
+    position: relative;
+    padding: 20px 24px;
+}
+
+.owl-carousel .owl-item img{
+    width: none !important;
+}
+
+.icon-share{
+    position: absolute;
+    right: 24px;
+}
+
 .section-carousel{
     margin-bottom: 70px;
+}
+
+.cardz-body .isi{
+    text-align: justify;
 }
 
 .guru{
@@ -229,12 +252,6 @@
 
 .guru-title {
     color: white
-}
-
-.section-carousel>div>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* TEMEN */

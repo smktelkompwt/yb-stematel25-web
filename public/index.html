@@ -25,7 +25,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link rel="stylesheet" href="../src//assets//owl/owl.carousel.css">
+    <link rel="stylesheet" href="../src//assets//owl//owl.theme.default.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+
     <title>YB WEBSITE</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -41,12 +48,60 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
+  <script src="../src/assets/jquery/jquery.min.js"></script>
+
+  <script src="../src//assets//owl//owl.carousel.js"></script>
   
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+  <script>
+    new WOW().init();
+    $(".owl-carousel").owlCarousel({
+            loop: true,
+            lazyLoad: true,
+            margin: 20,
+            stagePadding: 5,
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: false
+                },
+                767: {
+                    items: 2,
+                    dots: false
+                },
+                991: {
+                    items: 2,
+                    loop: true
+                },
+                1199: {
+                    items: 3,
+                    dots: false
+                },
+                1200: {
+                    items: 3,
+                    dots: false,
+                    nav: true
+                }
+            }
+        });
+
+        var owl = $('.owl-carousel');
+        owl.owlCarousel();
+        // Go to the next item
+        $('.btn-next').click(function () {
+            owl.trigger('next.owl.carousel');
+        })
+        // Go to the previous item
+        $('.btn-prev').click(function () {
+            // With optional speed parameter
+            // Parameters has to be in square bracket '[]'
+            owl.trigger('prev.owl.carousel', [300]);
+        });
   </script>
   
   </body>
