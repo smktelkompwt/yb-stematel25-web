@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { Form, FormGroup, Input } from 'reactstrap'
 import './style.css'
 import IMAGES from '../../config/images.js'
@@ -8,9 +8,9 @@ import firebase from 'firebase'
 
 const Impression = () => {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
 
-  const firebaseConfig = {
+  const firebaseConfig = useMemo(() => ({
     apiKey: "AIzaSyANeDhtG8IwdQ5pj8YN_UfSFbgywxIynwQ",
     authDomain: "yb-stematel25.firebaseapp.com",
     databaseURL: "https://yb-stematel25.firebaseio.com",
@@ -19,25 +19,32 @@ const Impression = () => {
     messagingSenderId: "645018167819",
     appId: "1:645018167819:web:f01b615d26f225d224f50e",
     measurementId: "G-7NB4GCCMT8"
-  };
+  }), []);
 
-  useEffect( async() => {
+  useEffect( () => {
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
 
-    const db = firebase.firestore();
-    await db.collection('comment').get().then((snapshot) => {
-      snapshot.docs.forEach(doc => {
-        let items = doc.data();
-        data.push(items)
-        setData(data)
-      })
+    const db = firebase.firestore().collection('comment').get().then((snapshot) => {
+      const items = snapshot.docs.map(doc => doc.data())
+      setData(items)
     });
 
-    console.log(data)
-  });
+    return db
+  }, [firebaseConfig, setData]);
 
+  const getTime = (timestamp) => {
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const date = new Date(timestamp.seconds * 1000)
+    const year = date.getFullYear()
+    const month = months[date.getMonth()]
+    const day = date.getDate()
+
+    return day + ' ' + month + ' ' + year
+  }
+  
+  
   return (
     <div className="impression">
       <h1 className="impression-title">TULIS SURAT CINTA <br/> KALIAN DISINI</h1>
@@ -52,16 +59,17 @@ const Impression = () => {
       </div>
   
       <div className="impression-content">
-        {data.map((item, key) => {
-          return(
-            <>
-            <h1>{item.username}</h1>
-            <div key={key}>
-              <PesanKesan image={IMAGES.fotoKesanPesan} like={item.like} time={item.timestamp} user={item.username} desc={item.desc} />
-            </div>
-            </>
+        {
+          data.map((item, key) => (
+              <div key={key}>
+                <h1>{item.username}</h1>
+                <div>
+                  <PesanKesan image={IMAGES.fotoKesanPesan} time={getTime(item.timestamp)} like={item.like} user={item.username} desc={item.desc} />
+                </div>
+              </div>
+            )
           )
-      })}
+        }
       </div>
       <button className="impression-btn-more">Load More</button>
     </div>
