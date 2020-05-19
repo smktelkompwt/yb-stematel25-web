@@ -7,6 +7,7 @@ import IMAGES from '../../config/images';
 import OwlCarousel from 'react-owl-carousel2';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+import 'owl.carousel/dist/owl.carousel'
 import $ from "jquery";
 
 const Homepage = () => {
@@ -14,16 +15,30 @@ const Homepage = () => {
   useEffect(() => {
     // const wow = new WOW.WOW();
     // wow.init()
-    new WOW.WOW().init()
+    new WOW.WOW().init();
+
+    let owl = $('.carousel');
+    // owl.owlCarousel();
+    $('.btn-next').click(function () {
+        owl.trigger('next.owl.carousel');
+    })
+    $('.btn-prev').click(function () {
+        owl.trigger('prev.owl.carousel', [300]);
+    });
   })
+
+  const next = () => {
+    
+    console.log("NEXTTT")
+  }
 
   const options = {
     items: 3,
     margin: 20,
-    nav: false,
+    nav: true,
     rewind: true,
     lazyload: true,
-    autoplay: true,
+    autoplay: false,
     loop: true,
     responsive: {
       0: {
@@ -44,23 +59,12 @@ const Homepage = () => {
       },
       1200: {
           items: 3,
-          dots: false,
+          dots: true,
           nav: true
       }
   },
   componentDidMount() {
-    var owl = $('.owl-carousel');
-    owl.owlCarousel();
-    // Go to the next item
-    $('.btn-next').click(function () {
-        owl.trigger('next.owl.carousel');
-    })
-    // Go to the previous item
-    $('.btn-prev').click(function () {
-        // With optional speed parameter
-        // Parameters has to be in square bracket '[]'
-        owl.trigger('prev.owl.carousel', [300]);
-    });
+    
   }
   
 };
@@ -159,13 +163,14 @@ const Homepage = () => {
                     </div>
                     <div className="mx-3"></div>
                     <div className="arrRightWrapper">
-                      <img className="btn-prev owl-prev" src={IMAGES.arrRight} alt=""/>
+                      <img className="btn-next owl-prev" onClick={next} src={IMAGES.arrRight} alt=""/>
                     </div>
                   </div>
               </div>
             </div>
-              <div className="row mb-5 carousel mt-4">
-                <OwlCarousel
+
+            <div className="row mb-5 carousel mt-4">
+              <OwlCarousel
                   options={options}
                 >
                 <div className="card-wrapper item">
@@ -192,8 +197,9 @@ const Homepage = () => {
                       </div>
                     </div>
                 </div>
-                </OwlCarousel>
-              </div>
+              </OwlCarousel>
+            </div>
+            
             <div className="row justify-content-center mt-4">
               <div className="col-lg-3">
                 <Button className="justify-content-center d-flex" text="KOMEN SEKARANG GES" width="240px" path="/impression"/>
