@@ -19,10 +19,10 @@ const Homepage = () => {
 
     let owl = $('.carousel');
     // owl.owlCarousel();
-    $('.btn-next').click(function () {
+    $('.arrRightWrapper').click(function () {
         owl.trigger('next.owl.carousel');
     })
-    $('.btn-prev').click(function () {
+    $('.arrLeftWrapper').click(function () {
         owl.trigger('prev.owl.carousel', [300]);
     });
   })
@@ -123,8 +123,8 @@ const Homepage = () => {
               </div>
             </div>
               
-            <div className="container wow fadeInUp" style={{ paddingBottom: "50px"}}>
-              <p className="ekspetasi-title">DAN LAMPAUI <br/> BATASANMU</p>
+            <div className="container wow fafeInLeft delay-2s" style={{ paddingBottom: "50px"}}>
+              <p className="ekspetasi-title wow fafeInLeft">DAN LAMPAUI <br/> BATASANMU</p>
             </div>
           </div>
         </section>
@@ -134,11 +134,11 @@ const Homepage = () => {
         <section className="ultra">
           <div className="container">
             <div className="row">
-              <div className="title-wrapper">
-                <h2>PLUS <br/> ULTRA</h2>
+              <div className="title-wrapper wow fadeInRight delay-2s">
+                <h2 className="wow fafeInRight">PLUS <br/> ULTRA</h2>
               </div>
             </div>
-            <div className="row video">
+            <div className="row video wow fadeInDown">
                 <video width="100%" height="100%" controls>
                   <source src={IMAGES.video}/>
                 </video>
@@ -151,25 +151,25 @@ const Homepage = () => {
       <section className="section-carousel komenin">
           <div className="container">
             <div className="row">
-              <div className="col-12">
+              <div className="col-12 wow fadeInLeft">
                 <p className="section-carousel-title">KOMENIN HIDUP<br />ORANG KUY</p>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
                   <div className="d-flex">
-                    <div className="arrLeftWrapper ">
+                    <div className="arrLeftWrapper wow fadeInLeft">
                       <img className="btn-prev owl-prev" src={IMAGES.arrLeft} alt=""/>
                     </div>
                     <div className="mx-3"></div>
-                    <div className="arrRightWrapper">
-                      <img className="btn-next owl-prev" onClick={next} src={IMAGES.arrRight} alt=""/>
+                    <div className="arrRightWrapper wow fadeInLeft delay-2s" onClick={next}>
+                      <img className="btn-next owl-prev" src={IMAGES.arrRight} alt=""/>
                     </div>
                   </div>
               </div>
             </div>
 
-            <div className="row mb-5 carousel mt-4">
+            <div className="row mb-5 carousel mt-4 wow fadeInLeft">
               <OwlCarousel
                   options={options}
                 >
