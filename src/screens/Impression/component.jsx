@@ -62,7 +62,6 @@ const Impression = () => {
         {
           data.map((item, key) => (
               <div key={key}>
-                <h1>{item.username}</h1>
                 <div>
                   <PesanKesan image={IMAGES.fotoKesanPesan} time={getTime(item.timestamp)} like={item.like} user={item.username} desc={item.desc} />
                 </div>
