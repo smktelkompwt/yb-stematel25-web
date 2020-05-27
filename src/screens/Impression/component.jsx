@@ -5,10 +5,12 @@ import IMAGES from '../../config/images.js'
 import Button from '../../components/Button'
 import PesanKesan from '../../components/PesanKesan'
 import firebase from 'firebase'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
 const Impression = () => {
 
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const firebaseConfig = useMemo(() => ({
     apiKey: "AIzaSyANeDhtG8IwdQ5pj8YN_UfSFbgywxIynwQ",
@@ -22,16 +24,17 @@ const Impression = () => {
   }), []);
 
   useEffect( () => {
+    setLoading(true)
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     }
 
-    const db = firebase.firestore().collection('comment').get().then((snapshot) => {
+    firebase.firestore().collection('comment').get().then((snapshot) => {
       const items = snapshot.docs.map(doc => doc.data())
       setData(items)
+      setLoading(false)
     });
 
-    return db
   }, [firebaseConfig, setData]);
 
   const getTime = (timestamp) => {
@@ -43,7 +46,6 @@ const Impression = () => {
 
     return day + ' ' + month + ' ' + year
   }
-  
   
   return (
     <div className="impression">
@@ -57,9 +59,15 @@ const Impression = () => {
         </Form>
         <Button text="POSTING SEKARANG GAES" bgColor="black" width="240px" heigth="45px"/>
       </div>
-  
       <div className="impression-content">
-        {
+        { 
+          loading ? 
+          <div className="skeleton-load">
+            <SkeletonTheme color="#c4c4c4" highlightColor="#dddddd">
+              <Skeleton width={570} height={570}/>
+            </SkeletonTheme>
+          </div>
+          :
           data.map((item, key) => (
               <div key={key}>
                 <div>
@@ -70,7 +78,10 @@ const Impression = () => {
           )
         }
       </div>
-      <button className="impression-btn-more">Load More</button>
+      {
+        loading ? null :
+        <button className="impression-btn-more">Load More</button>
+      }
     </div>
   )
 }

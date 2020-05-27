@@ -25,7 +25,7 @@ const Homepage = () => {
     $('.arrLeftWrapper').click(function () {
         owl.trigger('prev.owl.carousel', [300]);
     });
-  })
+  }, [])
 
   const next = () => {
     
