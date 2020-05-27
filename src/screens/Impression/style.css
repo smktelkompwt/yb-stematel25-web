@@ -16,11 +16,11 @@
     margin-bottom: 80px;
 }
 
-.impression-input {
+/* .impression-input {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
+} */
 
 .impression-btn-more {
     margin-bottom: 20px;
@@ -72,4 +72,19 @@
 
 .skeleton-load{
     margin: 50px 0;
+}
+
+.input-pesan {
+    padding: 50px;
+    padding-bottom: 180px;
+    margin: 10% 0 !important;
+    width: 570px;
+    height: 250px;
+    max-width: 570px !important;
+    background-color: white !important;
+}
+
+.input-pesan:focus {
+    outline: none !important;
+    border: 1px solid #FF5151;
 }

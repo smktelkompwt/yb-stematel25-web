@@ -8,7 +8,10 @@ import OwlCarousel from 'react-owl-carousel2';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import 'owl.carousel/dist/owl.carousel'
-import $ from "jquery";
+// import $ from "jquery";
+import PhotoList from '../../components/SiswaList'
+import students from '../../data/siswa.json'
+
 
 const Homepage = () => {
 
@@ -17,19 +20,53 @@ const Homepage = () => {
     // wow.init()
     new WOW.WOW().init();
 
-    let owl = $('.carousel');
-    // owl.owlCarousel();
-    $('.arrRightWrapper').click(function () {
-        owl.trigger('next.owl.carousel');
-    })
-    $('.arrLeftWrapper').click(function () {
-        owl.trigger('prev.owl.carousel', [300]);
-    });
+    // let owl = $('.carousel');
+    // // owl.owlCarousel();
+    // $('.arrRightWrapper').click(function () {
+    //     owl.trigger('next.owl.carousel');
+    // })
+    // $('.arrLeftWrapper').click(function () {
+    //     owl.trigger('prev.owl.carousel', [300]);
+    // });
   }, [])
 
   const next = () => {
-    
     console.log("NEXTTT")
+  }
+
+  const optionsSiswa = {
+    items: 2,
+    margin: 20,
+    nav: true,
+    rewind: true,
+    lazyload: true,
+    autoplay: false,
+    loop: true,
+    responsive: {
+      0: {
+          items: 1.2,
+          dots: false
+      },
+      767: {
+          items: 2,
+          dots: false
+      },
+      991: {
+          items: 2,
+          loop: true,
+          dots: false
+      },
+      1199: {
+          items: 3,
+          dots: false
+      },
+      1200: {
+          items: 3,
+          nav: true,
+          dots: false
+      }
+    },
+    navText: ["<", ">"]
   }
 
   const options = {
@@ -62,12 +99,8 @@ const Homepage = () => {
           dots: true,
           nav: true
       }
-  },
-  componentDidMount() {
-    
-  }
-  
-};
+    }
+  };
 
   return(
     <section>
@@ -158,21 +191,19 @@ const Homepage = () => {
             <div className="row">
               <div className="col-12">
                   <div className="d-flex">
-                    <div className="arrLeftWrapper wow fadeInLeft">
-                      <img className="btn-prev owl-prev" src={IMAGES.arrLeft} alt=""/>
-                    </div>
-                    <div className="mx-3"></div>
-                    <div className="arrRightWrapper wow fadeInLeft delay-2s" onClick={next}>
-                      <img className="btn-next owl-prev" src={IMAGES.arrRight} alt=""/>
-                    </div>
+                    <div className="owl-prev wow fadeInLeft">
+                        <img className="btn-prev " src={IMAGES.arrLeft} alt=""/>
+                      </div>
+                      <div className="mx-3"></div>
+                      <div className="owl-next wow fadeInLeft delay-2s" onClick={next}>
+                        <img className="btn-next " src={IMAGES.arrRight} alt=""/>
+                      </div>
                   </div>
               </div>
             </div>
 
             <div className="row mb-5 carousel mt-4 wow fadeInLeft">
-              <OwlCarousel
-                  options={options}
-                >
+              <OwlCarousel options={options}>
                 <div className="card-wrapper item">
                     <div className="card cardz">
                       <img className="card-img-top" src={IMAGES.fotoKomen} alt=""/>
@@ -214,37 +245,58 @@ const Homepage = () => {
         <section className="section-carousel guru">
           <div className="container">
             <p className="section-carousel-title guru-title">JANGAN LUPAIN<br />MEREKA YA GAESSS</p>
-            <div>
-              <div className="carousel">
-                
+            <div className="row">
+              <div className="col-12">
+                  {/* <div className="d-flex">
+                    <div className="owl-prev wow fadeInLeft">
+                      <img className="btn-prev " src={IMAGES.arrLeft} alt=""/>
+                    </div>
+                    <div className="mx-3"></div>
+                    <div className="owl-next wow fadeInLeft delay-2s" onClick={next}>
+                      <img className="btn-next " src={IMAGES.arrRight} alt=""/>
+                    </div>
+                  </div> */}
               </div>
-              <Button text="INGET SEKARANG DONG" bgColor="white" width="240px" path="/teacher"/>
-              <br/> 
+            </div>
+
+            <div className="row mb-5 carousel mt-4 wow fadeInLeft">
+              <OwlCarousel options={optionsSiswa}>
+              {
+                students.map((rpl1, key) => (
+                  <PhotoList data={rpl1} key={key} />
+                ))
+              }
+              </OwlCarousel>
+            </div>
+
+            <div className={"row justify-content-center"}>
+                <Button text="INGET SEKARANG DONG" bgColor="white" width="240px" path="/teacher"/>
+                <br/> 
             </div>
           </div>
         </section>
       {/* AKHIR GURU */}
 
       {/* TEMEN*/}
-      <section className="temen">
+      {/* <section className="temen">
           <div className="temen-title-wrapper">
             <p className="temen-title">APALAGI<br />SAMA KITA<br/>DONG</p>
           </div>
           <div>
             
           </div>
-          {/* <Button text="KEPOIN YUK GES" width="240px" path="/student"/> */}
-        </section>
+          <Button text="KEPOIN YUK GES" width="240px" path="/student"/>
+        </section> */}
       {/* AKHIR TEMEN */}
 
       {/* OUTRO */}
         <section className="outro">
-          <div className="outro-wrapper">
+          <div className="outro-wrapper wow fadeInLeft">
             <div>
               <p>YAUDAH<br/>GITU AJA<br/>SIH</p>
             </div>
           </div>
-          <div className="outro-wrapper">
+          <div className="outro-wrapper wow fadeInRight">
             <div>
               <p>KLIK BUAT<br/>TAU SIAPA<br/>YANG BIKIN</p>
             </div>

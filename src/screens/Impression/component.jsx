@@ -51,14 +51,11 @@ const Impression = () => {
     <div className="impression">
       <h1 className="impression-title">TULIS SURAT CINTA <br/> KALIAN DISINI</h1>
   
-      <div className="impression-input">
-        <Form>
-          <FormGroup>
-            <Input type="text" placeholder="Posting pesan dan kesan kamu selama sekolah"/>
-          </FormGroup>
-        </Form>
+      <form action="">
+        <input className="input-pesan" type="text" placeholder="Posting pesan dan kesan kamu selama sekolah"/>
+          
         <Button text="POSTING SEKARANG GAES" bgColor="black" width="240px" heigth="45px"/>
-      </div>
+      </form>
       <div className="impression-content">
         { 
           loading ? 
