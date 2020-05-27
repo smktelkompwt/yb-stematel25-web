@@ -46,10 +46,7 @@ const Navigationbar = (props) => {
       // window.location.reload(false)
     })
     .catch((err) => console.log(err))
-  }
-
-  console.log(user);
-  
+  }  
   
   return (
     <section>

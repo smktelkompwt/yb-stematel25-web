@@ -65,3 +65,13 @@ nav{
     font-size: 52px;
     color: white;
 }
+
+@media only screen and (max-width: 767px) {
+    .jurusan-title-wrapper{
+        display: none;
+    }
+
+    .navbar-link{
+        font-size: 8vw;
+    }
+}
