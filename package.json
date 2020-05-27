@@ -13,6 +13,7 @@
     "react-bootstrap": "^1.0.0",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
+    "react-loading-skeleton": "^2.0.1",
     "react-owl-carousel": "^2.3.1",
     "react-owl-carousel2": "^0.3.0",
     "react-router-dom": "^5.1.2",
