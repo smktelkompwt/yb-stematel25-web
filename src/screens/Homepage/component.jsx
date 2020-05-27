@@ -123,7 +123,7 @@ const Homepage = () => {
               </div>
             </div>
               
-            <div className="container wow fafeInLeft delay-2s" style={{ paddingBottom: "50px"}}>
+            <div className="container wow fafeInLeft delay-2s" >
               <p className="ekspetasi-title wow fafeInLeft">DAN LAMPAUI <br/> BATASANMU</p>
             </div>
           </div>
