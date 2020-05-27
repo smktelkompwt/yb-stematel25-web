@@ -15,7 +15,7 @@ const Homepage = () => {
     // const wow = new WOW.WOW();
     // wow.init()
     new WOW.WOW().init()
-  })
+  }, [])
 
   const options = {
     items: 3,

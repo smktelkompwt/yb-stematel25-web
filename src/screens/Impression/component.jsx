@@ -26,12 +26,10 @@ const Impression = () => {
       firebase.initializeApp(firebaseConfig);
     }
 
-    const db = firebase.firestore().collection('comment').get().then((snapshot) => {
+    firebase.firestore().collection('comment').get().then((snapshot) => {
       const items = snapshot.docs.map(doc => doc.data())
       setData(items)
     });
-
-    return db
   }, [firebaseConfig, setData]);
 
   const getTime = (timestamp) => {
@@ -43,7 +41,6 @@ const Impression = () => {
 
     return day + ' ' + month + ' ' + year
   }
-  
   
   return (
     <div className="impression">
