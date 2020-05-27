@@ -1,0 +1,2 @@
+(this["webpackJsonpyear-book"]=this["webpackJsonpyear-book"]||[]).push([[12],{155:function(e,n,t){},162:function(e,n,t){"use strict";t.r(n);var a=t(1),o=t.n(a);t(155);var r=function(){return o.a.createElement("div",null,o.a.createElement("p",null,"Video"))};n.default=r}}]);
+//# sourceMappingURL=12.6d0ced37.chunk.js.map

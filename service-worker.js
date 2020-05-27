@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/yb-stematel25-web/precache-manifest.6ea167252783dc8d737e0fa5eee6529a.js"
+  "/yb-stematel25-web/precache-manifest.a541122ddd043c1ff99c73ffad4b0c5a.js"
 );
 
 self.addEventListener('message', (event) => {
