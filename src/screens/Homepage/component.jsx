@@ -7,6 +7,7 @@ import IMAGES from '../../config/images';
 import OwlCarousel from 'react-owl-carousel2';
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
+import 'owl.carousel/dist/owl.carousel'
 import $ from "jquery";
 
 const Homepage = () => {
@@ -14,16 +15,30 @@ const Homepage = () => {
   useEffect(() => {
     // const wow = new WOW.WOW();
     // wow.init()
-    new WOW.WOW().init()
+    new WOW.WOW().init();
+
+    let owl = $('.carousel');
+    // owl.owlCarousel();
+    $('.arrRightWrapper').click(function () {
+        owl.trigger('next.owl.carousel');
+    })
+    $('.arrLeftWrapper').click(function () {
+        owl.trigger('prev.owl.carousel', [300]);
+    });
   }, [])
+
+  const next = () => {
+    
+    console.log("NEXTTT")
+  }
 
   const options = {
     items: 3,
     margin: 20,
-    nav: false,
+    nav: true,
     rewind: true,
     lazyload: true,
-    autoplay: true,
+    autoplay: false,
     loop: true,
     responsive: {
       0: {
@@ -44,23 +59,12 @@ const Homepage = () => {
       },
       1200: {
           items: 3,
-          dots: false,
+          dots: true,
           nav: true
       }
   },
   componentDidMount() {
-    var owl = $('.owl-carousel');
-    owl.owlCarousel();
-    // Go to the next item
-    $('.btn-next').click(function () {
-        owl.trigger('next.owl.carousel');
-    })
-    // Go to the previous item
-    $('.btn-prev').click(function () {
-        // With optional speed parameter
-        // Parameters has to be in square bracket '[]'
-        owl.trigger('prev.owl.carousel', [300]);
-    });
+    
   }
   
 };
@@ -119,8 +123,8 @@ const Homepage = () => {
               </div>
             </div>
               
-            <div className="container wow fadeInUp" style={{ paddingBottom: "50px"}}>
-              <p className="ekspetasi-title">DAN LAMPAUI <br/> BATASANMU</p>
+            <div className="container wow fafeInLeft delay-2s" style={{ paddingBottom: "50px"}}>
+              <p className="ekspetasi-title wow fafeInLeft">DAN LAMPAUI <br/> BATASANMU</p>
             </div>
           </div>
         </section>
@@ -130,11 +134,11 @@ const Homepage = () => {
         <section className="ultra">
           <div className="container">
             <div className="row">
-              <div className="title-wrapper">
-                <h2>PLUS <br/> ULTRA</h2>
+              <div className="title-wrapper wow fadeInRight delay-2s">
+                <h2 className="wow fafeInRight">PLUS <br/> ULTRA</h2>
               </div>
             </div>
-            <div className="row video">
+            <div className="row video wow fadeInDown">
                 <video width="100%" height="100%" controls>
                   <source src={IMAGES.video}/>
                 </video>
@@ -147,25 +151,26 @@ const Homepage = () => {
       <section className="section-carousel komenin">
           <div className="container">
             <div className="row">
-              <div className="col-12">
+              <div className="col-12 wow fadeInLeft">
                 <p className="section-carousel-title">KOMENIN HIDUP<br />ORANG KUY</p>
               </div>
             </div>
             <div className="row">
               <div className="col-12">
                   <div className="d-flex">
-                    <div className="arrLeftWrapper ">
+                    <div className="arrLeftWrapper wow fadeInLeft">
                       <img className="btn-prev owl-prev" src={IMAGES.arrLeft} alt=""/>
                     </div>
                     <div className="mx-3"></div>
-                    <div className="arrRightWrapper">
-                      <img className="btn-prev owl-prev" src={IMAGES.arrRight} alt=""/>
+                    <div className="arrRightWrapper wow fadeInLeft delay-2s" onClick={next}>
+                      <img className="btn-next owl-prev" src={IMAGES.arrRight} alt=""/>
                     </div>
                   </div>
               </div>
             </div>
-              <div className="row mb-5 carousel mt-4">
-                <OwlCarousel
+
+            <div className="row mb-5 carousel mt-4 wow fadeInLeft">
+              <OwlCarousel
                   options={options}
                 >
                 <div className="card-wrapper item">
@@ -192,8 +197,9 @@ const Homepage = () => {
                       </div>
                     </div>
                 </div>
-                </OwlCarousel>
-              </div>
+              </OwlCarousel>
+            </div>
+            
             <div className="row justify-content-center mt-4">
               <div className="col-lg-3">
                 <Button className="justify-content-center d-flex" text="KOMEN SEKARANG GES" width="240px" path="/impression"/>
