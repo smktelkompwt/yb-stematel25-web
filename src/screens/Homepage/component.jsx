@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import Button from '../../components/Button'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,7 +13,10 @@ import PhotoList from '../../components/SiswaList'
 import students from '../../data/siswa.json'
 
 
-const Homepage = () => {
+const Homepage = (props) => {
+
+  const [popup, setPopup] = useState(false)
+  const togglePopup = () => setPopup(!popup)
 
   useEffect(() => {
     // const wow = new WOW.WOW();
@@ -41,7 +44,7 @@ const Homepage = () => {
     rewind: true,
     lazyload: true,
     autoplay: false,
-    loop: true,
+    loop: false,
     responsive: {
       0: {
           items: 1.2,
@@ -99,7 +102,7 @@ const Homepage = () => {
           dots: true,
           nav: true
       }
-    }
+    },
   };
 
   return(
@@ -126,12 +129,8 @@ const Homepage = () => {
       {/* REALITA */}
         <section className="realita">
           <div className="container">
-            <div className="row">
-              <div className="col">
-                <h1 className="realita-title mb-5 wow fadeInLeft">REALITA</h1>
-              </div>
-            </div>
-            <div className="row">
+            <h1 className="realita-title mb-5 wow fadeInLeft">REALITA</h1>
+            <div className="row wow fadeInRight">
               {realita("Jumlah Siswa", 895)}
               {realita("Jumlah Siswa", 895)}
               {realita("Jumlah Siswa", 895)}
@@ -164,18 +163,26 @@ const Homepage = () => {
       {/* AKHIR EKSPETASI */}
 
       {/* PLUS ULTRA */}
-        <section className="ultra">
+        <section className="ultra wow fadeInLeft">
           <div className="container">
             <div className="row">
               <div className="title-wrapper wow fadeInRight delay-2s">
-                <h2 className="wow fafeInRight">PLUS <br/> ULTRA</h2>
+                <h2 className="wow fafeInRight">PLUS ULTRA</h2>
               </div>
             </div>
-            <div className="row video wow fadeInDown">
-                <video width="100%" height="100%" controls>
+            <div className="video-thumb-wrapper wow fadeInUp">
+              <img onClick={togglePopup} src={IMAGES.videoThumb} alt="" />
+            </div>
+            {
+              popup ?
+              <div className="video-wrapper">
+                <img onClick={togglePopup} src={IMAGES.close} alt=""/>
+                <video controls className="wow fadeInUp">
                   <source src={IMAGES.video}/>
                 </video>
-            </div>
+              </div>
+              : null
+            }
           </div>
         </section>
       {/* AKHIR PLUS ULTRA */}
@@ -232,9 +239,7 @@ const Homepage = () => {
             </div>
             
             <div className="row justify-content-center mt-4">
-              <div className="col-lg-3">
                 <Button className="justify-content-center d-flex" text="KOMEN SEKARANG GES" width="240px" path="/impression"/>
-              </div>
             </div>
           </div>
         </section>
@@ -310,7 +315,7 @@ const Homepage = () => {
 const realita = (title, value) => {
   return (
     <div className="col-lg-3 col-md-6 col-xs-12">
-      <div className="content wow fadeInRight">
+      <div className="content">
         <h3>{value}</h3>
         <p className="m-0">{title}</p>
       </div>

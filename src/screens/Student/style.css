@@ -42,7 +42,8 @@
     position: relative;
     background-color: black;
     font-weight: bold;
-    width: 260px;
+    width: 300px;
+    max-width: 300px;
     min-height: 43px;
 }
 
@@ -56,7 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 260px;
+    width: 300px;
     min-height: 43px;
     text-align: center;
     padding: 5px;
@@ -79,7 +80,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 260px;
+    width: 300px;
     min-height: 43px;
 }
 
@@ -93,27 +94,13 @@
     width: 100%;
 }
 
-/* @media screen and (max-width: 426px){
-    .student-tab-wrapper .col{
-        margin-right: 0px;
+@media only screen and (max-width: 600px) {
+    .student-tab-item {
+        margin-top: 20px;
+        min-width: 200px;
     }
 
-    .student-tab-item {
-        width: 300px;
-        min-height: 25px;
-    }
-    
     .student-tab-link {
-        width: 300px;
-        min-height: 25px;
-        top: -8px;
-        left: -8px;
-        font-size: 10px;
+        min-width: 200px;
     }
-    
-    .student-tab-active {
-        width: 300px;
-        height: 20px;
-        font-size: 10px;
-    }
-} */
+}

@@ -70,13 +70,13 @@ const Navigationbar = (props) => {
             <NavLink className="navbar-link" tag={RRNavLink} exact to="/impression" onClick={toggle}>Pesan dan Kesan</NavLink>
           </NavItem>
           <NavItem className="navbar-wrapper">
-            <NavLink className="navbar-link" tag={RRNavLink} exact to="/teacher" onClick={toggle}>Daftar Guru</NavLink>
+            <NavLink className="navbar-link" tag={RRNavLink} exact to="/about" onClick={toggle}>Daftar Guru</NavLink>
           </NavItem>
           <NavItem className="navbar-wrapper">
             <NavLink className="navbar-link" tag={RRNavLink} exact to="/student" onClick={toggle}>Daftar Siswa</NavLink>
           </NavItem>
           <NavItem className="navbar-wrapper">
-            <NavLink className="navbar-link" tag={RRNavLink} exact to="/video" onClick={toggle}>Tentang Kami</NavLink>
+            <NavLink className="navbar-link" tag={RRNavLink} exact to="/about" onClick={toggle}>Tentang Kami</NavLink>
           </NavItem>
           {
           user === null ?
