@@ -13,7 +13,7 @@
     font-size: 52px;
     letter-spacing: 0.1em;
     margin-top: 150px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 /* .impression-input {
@@ -71,6 +71,7 @@
 }
 
 .skeleton-load{
+    width: 570px;
     margin: 50px 0;
 }
 
@@ -98,6 +99,10 @@
     .skeleton-load {
         width: 80vw;
         height: 80vw;
+    }
+
+    .skeleton {
+        width: 80vw;
     }
 
     .impression form {

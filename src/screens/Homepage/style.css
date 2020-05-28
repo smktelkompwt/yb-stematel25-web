@@ -107,7 +107,7 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    height: 110vh;
+    height: 140vh;
     margin-left: 18vh;
 }
 
@@ -147,13 +147,13 @@
     right: 0;
     float: right;
     position: absolute;
-    top: 20vh;
+    top: 28vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
     width: 92%;
-    height: 55vh;
+    height: 70vh;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../../assets//img/foto-jurusan.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -164,7 +164,19 @@
 /* ULTRA */
 .ultra{
     background: #FF5151;
-    padding-bottom: 8vw;
+    padding-bottom: 7vw;
+}
+
+.ultra .title-wrapper {
+    position: absolute;
+    left: 0;
+    width: 25vw;
+    height: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF3333;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.15);
 }
 
 .ultra .title-wrapper h2{
@@ -183,12 +195,12 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 2vw;
+    margin-top: 7vw;
 }
 
 .video-thumb-wrapper img {
-    max-width: 100vw;
-    min-width: 100%;
+    max-width: 75vw;
+    min-width: 60%;
     max-height: 100%;
 }
 
@@ -373,6 +385,10 @@
         height: 80vh;
     }
 
+    .ekspetasi>div {
+        padding: 20px 0 20px 0;
+    }
+
     .ekspetasi-code {
         height: 30vh;
     }
@@ -386,8 +402,10 @@
     }
 
     .ultra .title-wrapper h2 {
-        font-size: 8vw;
+        font-size: 5vw;
         margin-left: 5vw;
+        line-height: 30px;
+        margin-right: 20px;
     }
 
     .video-wrapper video {
