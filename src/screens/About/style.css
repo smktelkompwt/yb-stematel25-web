@@ -1,0 +1,11 @@
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.video-container p {
+    font-size: 50px;
+    font-weight: bold;
+}

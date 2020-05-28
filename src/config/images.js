@@ -23,6 +23,7 @@ const images = {
     iconLove: require('../assets/img/icon-love.svg'),
     iconShare: require('../assets/img/icon-share.svg'),
     fotoKomen: require('../assets/img/foto-komen.png'),
+    videoThumb: require('../assets/img/video-min.png'),
     video: require('../assets/vid/jumbotron-video.mp4'),
 };
 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Form, FormGroup, Input } from 'reactstrap'
 import './style.css'
 import IMAGES from '../../config/images.js'
 import Button from '../../components/Button'
@@ -54,14 +53,14 @@ const Impression = () => {
       <form action="">
         <input className="input-pesan" type="text" placeholder="Posting pesan dan kesan kamu selama sekolah"/>
           
-        <Button text="POSTING SEKARANG GAES" bgColor="black" width="240px" heigth="45px"/>
+        <Button className="post-btn" text="POSTING SEKARANG GAES" bgColor="black" width="240px" heigth="45px"/>
       </form>
       <div className="impression-content">
         { 
           loading ? 
           <div className="skeleton-load">
             <SkeletonTheme color="#c4c4c4" highlightColor="#dddddd">
-              <Skeleton width={570} height={570}/>
+              <Skeleton height="80vw"/>
             </SkeletonTheme>
           </div>
           :

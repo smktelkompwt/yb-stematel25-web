@@ -32,3 +32,9 @@
 .student-detail-call{
     margin-top: 50px;
 }
+
+@media only screen and ( max-width: 600px ) {
+    .student-detail {
+        width: 80vw
+    }
+}
