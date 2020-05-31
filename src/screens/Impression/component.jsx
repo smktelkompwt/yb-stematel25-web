@@ -58,11 +58,11 @@ const Impression = () => {
       <div className="impression-content">
         { 
           loading ? 
-          <div className="skeleton-load">
-            <SkeletonTheme color="#c4c4c4" highlightColor="#dddddd">
-              <Skeleton height="80vw"/>
-            </SkeletonTheme>
-          </div>
+            <div className="skeleton-load">
+              <SkeletonTheme color="#c4c4c4" highlightColor="#dddddd">
+                <Skeleton height={570}/>
+              </SkeletonTheme>
+            </div>
           :
           data.map((item, key) => (
               <div key={key}>

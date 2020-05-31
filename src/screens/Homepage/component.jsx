@@ -167,7 +167,7 @@ const Homepage = (props) => {
           <div className="container">
             <div className="row">
               <div className="title-wrapper wow fadeInRight delay-2s">
-                <h2 className="wow fafeInRight">PLUS ULTRA</h2>
+                <h2 className="wow fafeInRight">PLUS<br />ULTRA</h2>
               </div>
             </div>
             <div className="video-thumb-wrapper wow fadeInUp">
@@ -247,7 +247,7 @@ const Homepage = (props) => {
       {/* AKHIR KOMENIN */}
 
       {/* GURU */}
-        <section className="section-carousel guru">
+        <section className="section-carousel guru wow fadeInUp">
           <div className="container">
             <p className="section-carousel-title guru-title">JANGAN LUPAIN<br />MEREKA YA GAESSS</p>
             <div className="row">
