@@ -107,7 +107,7 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    height: 140vh;
+    height: 150vh;
     margin-left: 18vh;
 }
 
@@ -153,7 +153,7 @@
     justify-content: center;
     text-align: left;
     width: 92%;
-    height: 70vh;
+    height: 80vh;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url(../../assets//img/foto-jurusan.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -199,13 +199,16 @@
 }
 
 .video-thumb-wrapper img {
-    max-width: 75vw;
+    max-width: 80vw;
     min-width: 60%;
     max-height: 100%;
 }
 
 .video-thumb-wrapper img:hover{
     cursor: pointer;
+    outline: 3px solid #fff;
+    outline-offset: -30px;
+    transition: .4s ease-in-out;
 }
 
 .video-wrapper {

@@ -131,10 +131,10 @@ const Homepage = (props) => {
           <div className="container">
             <h1 className="realita-title mb-5 wow fadeInLeft">REALITA</h1>
             <div className="row wow fadeInRight">
-              {realita("Jumlah Siswa", 895)}
-              {realita("Jumlah Siswa", 895)}
-              {realita("Jumlah Siswa", 895)}
-              {realita("Jumlah Siswa", 895)}
+              {realita("Jumlah Siswa", 120)}
+              {realita("Jumlah Kelas", 12)}
+              {realita("Jumlah Laki Laki", 120)}
+              {realita("Jumlah Perempuan", 52)}
             </div>
           </div>
         </section>
@@ -156,7 +156,7 @@ const Homepage = (props) => {
             </div>
               
             <div className="container wow fafeInLeft delay-2s" >
-              <p className="ekspetasi-title wow fafeInLeft">DAN LAMPAUI <br/> BATASANMU</p>
+              <p className="ekspetasi-title wow fafeInLeft"><br/><br/><br/>DAN LAMPAUI <br/> BATASANMU</p>
             </div>
           </div>
         </section>
