@@ -11,8 +11,30 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Student {
-  id      String    @id @default(cuid())
-  name    String
-  class   String
+model Alumni {
+  id              String        @id @default(cuid())
+  name            String
+  photos          String?
+  class           Class         @relation(fields: [classId], references: [id])
+  classId         String
+
+  @@index([classId])
+}
+
+model Class {
+  id              String        @id @default(cuid())
+  name            String
+  slug            String        @unique
+  alumni          Alumni[]
+  major           Major         @relation(fields: [majorId], references: [id])
+  majorId         String
+
+  @@index([majorId])
+}
+
+model Major {
+  id              String        @id @default(cuid())
+  name            String        @unique
+  abbreviation    String        @unique
+  class           Class[]
 }
