@@ -20,8 +20,8 @@ const TabItem: React.FC<{
   return (
     <Link href={href}>
       <button className={cx(
-        "text-center w-full h-20 text-lg hover:backdrop-blur hover:bg-slate-50/20",
-        index === value && "backdrop-blur bg-slate-50/10"
+        "text-center w-full h-20 text-lg hover:backdrop-blur hover:bg-slate-50/30",
+        index === value && "backdrop-blur bg-slate-50/20"
       )}>
         {title}
       </button>

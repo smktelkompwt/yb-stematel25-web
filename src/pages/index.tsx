@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Home: NextPage = () => {
-  const [muted, setMuted] = useState(false)
+  const [muted, setMuted] = useState(true)
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       </video>
       <button
         onClick={() => setMuted(prev => !prev)}
-        className="absolute bottom-8 right-8 rounded-full backdrop-blur bg-slate-50/20 text-black p-4"
+        className="fixed bottom-8 right-8 rounded-full backdrop-blur bg-slate-50/20 hover:bg-slate-50/30 text-black p-4"
       >
         {muted ? (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-slate-50">
@@ -29,19 +29,19 @@ const Home: NextPage = () => {
         )}
       </button>
       <div className="container mx-auto px-4 min-h-screen flex items-center justify-center flex-col">
-        <div className="flex flex-col md:flex-row">
+        <div className="grid grid-row-3 md:grid-cols-3 text-center w-full">
           <Link href="/alumni/TKJ">
-            <div className="hover:backdrop-blur hover:bg-slate-50/20 py-8 px-32">
+            <div className="hover:backdrop-blur hover:bg-slate-50/30 py-8 px-10 w-full">
               <h1 className="text-8xl font-extralight">TKJ</h1>
             </div>
           </Link>
           <Link href="/alumni/TJA">
-            <div className="hover:backdrop-blur hover:bg-white/20 py-8 px-32">
+            <div className="hover:backdrop-blur hover:bg-white/30 py-8 px-10 w-full">
               <h1 className="text-8xl font-extralight">TJA</h1>
             </div>
           </Link>
           <Link href="/alumni/RPL">
-            <div className="hover:backdrop-blur hover:bg-white/20 py-8 px-32">
+            <div className="hover:backdrop-blur hover:bg-white/30 py-8 px-10 w-full">
               <h1 className="text-8xl font-extralight">RPL</h1>
             </div>
           </Link>
