@@ -11,12 +11,18 @@ datasource db {
   relationMode = "prisma"
 }
 
+enum Status {
+  REQUESTED
+  PUBLISHED
+}
+
 model Alumni {
   id              String        @id @default(cuid())
   name            String
   photos          String?
   class           Class         @relation(fields: [classId], references: [id])
   classId         String
+  status          Status        @default(REQUESTED)
 
   @@index([classId])
 }
@@ -56,13 +62,13 @@ model Account {
   user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-  // @@index([userId])
+  @@index([userId])
 }
 
 model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique
-  userId       String   @unique
+  userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 

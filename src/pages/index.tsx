@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Yearbook - SMK Telkom Purowkerto</title>
+        <title>YB25 - SMK Telkom Purwokerto</title>
       </Head>
       <video id="video-background-stematel25" autoPlay loop muted={muted} className="fixed w-full h-full object-cover -z-10 brightness-75">
         <source src="https://res.cloudinary.com/daan17b95/video/upload/v1676192016/Videos/jumbotron-video_sruocc.mp4" type="video/mp4" />

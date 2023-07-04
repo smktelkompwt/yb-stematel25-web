@@ -5,6 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { cx } from "@/utils/classnames";
 import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 
 const TabItem: React.FC<{
   title: string,
@@ -36,20 +37,32 @@ const AlumniItem: React.FC<{
   name,
   photo,
 }) => {
-  const source = photo ? photo : "/img/no-image.png"
-
   return (
     <div>
       <div className="relative h-[250px] md:h-[300px]">
-        <Image
-          src={source}
-          alt={name}
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: 'cover',
-          }}
-        />
+        {photo ? (
+          <CldImage
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+            sizes="50vw"
+            src={photo}
+            alt={name}
+          />
+        ) : (
+          <Image
+            src="/img/no-image.png"
+            alt={name}
+            quality={10}
+            fill
+            priority
+            sizes="50vw"
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+        )}
       </div>
       <div className="mt-4">
         <p>{name}</p>
@@ -126,6 +139,9 @@ export const getServerSideProps = async (
     },
     include: {
       alumni: {
+        where: {
+          status: "PUBLISHED"
+        },
         orderBy: {
           name: "asc"
         }
